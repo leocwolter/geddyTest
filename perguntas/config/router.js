@@ -40,4 +40,5 @@ router.get('/').to('Main.index');
 // });
 
 router.resource('perguntas');
+router.resource('respostas');
 exports.router = router;

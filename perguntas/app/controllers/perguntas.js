@@ -44,7 +44,10 @@ var Perguntas = function () {
         throw new geddy.errors.NotFoundError();
       }
       else {
-        self.respondWith(pergunta);
+        pergunta.getRespostas(function(err, respostas){
+          if(err) throw err;
+          self.respond({pergunta: pergunta, respostas: respostas});
+        })
       }
     });
   };

@@ -5,6 +5,14 @@ var Pergunta = function () {
     descricao: {type: 'string'}
   });
 
+  this.validatesPresent('titulo');
+  this.validatesLength('titulo', {min:8});
+
+  this.validatesPresent('descricao');
+  this.validatesLength('descricao', {min:15});
+
+  this.hasMany('Respostas');
+
   /*
   this.property('login', 'string', {required: true});
   this.property('password', 'string', {required: true});

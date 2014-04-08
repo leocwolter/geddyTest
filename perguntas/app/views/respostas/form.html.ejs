@@ -1,0 +1,16 @@
+<div class="control-group">
+  <label for="descricao" class="control-label">descricao</label>
+  <div class="controls">
+    <%- contentTag('input', resposta.descricao, {type:'text', class:'span6', name:'descricao'}) %>
+  </div>
+	
+  <label for="titulo" class="control-label">Pergunta para essa resposta</label>
+  <div>
+    <%- selectTag(perguntas, resposta.perguntaId, {
+	      name: 'perguntaId'
+	    , valueField: 'id'
+	    , textField: 'titulo'
+    }); %>
+  </div>
+
+</div>
