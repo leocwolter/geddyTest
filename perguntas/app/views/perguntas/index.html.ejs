@@ -1,0 +1,19 @@
+<div class="hero-unit">
+  <h2>All Perguntas</h2>
+  <%- linkTo('Create a new Pergunta', addPerguntaPath, {class: 'btn pull-right'}); %>
+</div>
+
+<div id="perguntas-list">
+<% if (perguntas) { %>
+<% for (var i = 0, ii = perguntas.length; i < ii; i++) { %>
+  <div class="row list-item" id="pergunta-<%= perguntas[i].id; %>">
+    <div class="span8">
+      <h3><%- linkTo(perguntas[i].id, perguntaPath(perguntas[i].id)); %></h3>
+    </div>
+    <div class="span4">
+      <h3><i class="icon-list-alt"></i><%= perguntas[i].id; %></h3>
+    </div>
+  </div>
+<% } %>
+<% } %>
+</div>
